@@ -1,7 +1,4 @@
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,5 +34,8 @@ public class test {
         String count = loginPage.getCount();
         Assert.assertEquals(Integer.parseInt(count),1);
  }
+    @AfterClass
+    public static void tearDown() {
+        loginPage.driver.quit(); }
 
 }
